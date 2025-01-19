@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'favorites_screen.dart';
 import '../services/api_services.dart';
 import '../widgets/joke_card.dart';
 import 'jokes_screen.dart';
@@ -11,6 +12,15 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Joke Types'),
         actions: [
+          IconButton(
+            icon: Icon(Icons.favorite),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FavoritesScreen()),
+              );
+            },
+          ),
           IconButton(
             icon: Icon(Icons.sentiment_very_satisfied),
             onPressed: () {
